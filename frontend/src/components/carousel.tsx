@@ -1,15 +1,10 @@
 import "./carousel.css"
 
-function Carousel() {
-  return (
+function Carousel () {
+  return(
     <>
-      <div className="container">
-        <div className="grid">
-          <div className="item1 itens"></div>
-          <div className="item2 itens"></div>
-          <div className="item3 itens"></div>
-          <div className="item4 itens"></div>
-        </div>
+      <div className="containerCarousel">
+        <div><img src="https://static.netshoes.com.br/bnn/l_netshoes/2024-10-25/4136_exclusivos_desk_full.gif" alt="" /></div>
       </div>
     </>
   )

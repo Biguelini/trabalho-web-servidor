@@ -1,5 +1,5 @@
 .containerNavbar {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .navbar a {
@@ -21,31 +21,58 @@
   max-width: 1280px;
 }
 
+.buscar {
+  border: 1px solid red;
+  padding: 0px 15px 0px 0px;
+  margin: 0px auto 0px 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  background: rgba(61, 60, 60, 0.5);
+  border-radius: 10px;
+}
+
+.buscar:focus-within {
+  background: black;
+}
+
+.navbar ul input {
+  padding: 0px 0px 0px 15px;
+  height: 100%;
+  background: none;
+  border: none;
+}
+
+.navbar ul input:focus {
+  outline: none;
+  caret-color: white;
+}
+
 .navbar ul li {
   list-style: none;
   display: flex;
   align-items: center;
 }
 
-.navbar ul li:first-child a {
+.navbar ul li:nth-child(2) a {
   border: 1px solid white;
   background: rgb(116, 106, 206);
   border-radius: 10px;
   padding: 5px 20px;
 }
 
-.navbar ul li:first-child a:hover {
+.navbar ul li:nth-child(2) a:hover {
   border: 1px solid white;
   background: rgb(32, 32, 97);
 }
 
-.navbar ul li:nth-child(2) a {
+.navbar ul li:nth-child(3) a {
   border: 1px solid white;
   border-radius: 10px;
   padding: 5px 20px;
 }
 
-.navbar ul li:nth-child(2) a:hover {
+.navbar ul li:nth-child(3) a:hover {
   border: 1px solid white;
   background: rgb(116, 106, 206);
   color: white;
