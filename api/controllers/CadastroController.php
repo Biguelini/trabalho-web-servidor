@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/User.php';
-require_once __DIR__ . '/../views/cadastro_view.php';
+require_once __DIR__ . '/../views/response_view.php.php';
 
 class CadastroController {
 	public function cadastro() {
@@ -8,7 +8,7 @@ class CadastroController {
 
 		if (!$data) {
 			http_response_code(400);
-			echo renderCadastroResponse(["message" => "Falha ao decodificar JSON."]);
+			echo renderResponse(["message" => "Falha ao decodificar JSON."]);
 			return;
 		}
 
@@ -37,13 +37,13 @@ class CadastroController {
 
 				if ($errors) {
 					http_response_code(422);
-					echo renderCadastroResponse(["message" => $errors]);
+					echo renderResponse(["message" => $errors]);
 					return;
 				}
 
 				$user = new User($data->username, $data->password, $data->name, $data->email, $data->cpf, $data->phone);
 
-				echo renderCadastroResponse([
+				echo renderResponse([
 					"message" => "Cadastro bem-sucedido!",
 					"user" => [
 						"name" => $user->name,
@@ -55,12 +55,12 @@ class CadastroController {
 				return;
 			} catch (Exception $e) {
 				http_response_code(500);
-				echo renderCadastroResponse(["message" => $e->getMessage()]);
+				echo renderResponse(["message" => $e->getMessage()]);
 				return;
 			}
 		} else {
 			http_response_code(400);
-			echo renderCadastroResponse(["message" => "Dados de cadastro não fornecidos."]);
+			echo renderResponse(["message" => "Dados de cadastro não fornecidos."]);
 		}
 	}
 }

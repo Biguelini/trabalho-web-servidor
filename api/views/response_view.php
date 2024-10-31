@@ -1,4 +1,4 @@
 <?php
-function renderLoginResponse($data) {
+function renderResponse($data) {
     return json_encode($data);
 }

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/User.php';
-require_once __DIR__ . '/../views/login_view.php';
+require_once __DIR__ . '/../views/response_view.php.php';
 
 class LoginController {
 	public function login() {
@@ -8,7 +8,7 @@ class LoginController {
 
 		if (!$data) {
 			http_response_code(400);
-			echo renderLoginResponse(["message" => "Falha ao decodificar JSON."]);
+			echo renderResponse(["message" => "Falha ao decodificar JSON."]);
 			return;
 		}
 
@@ -17,7 +17,7 @@ class LoginController {
 
 			if ($data->username === $user->username && $data->password === $user->password) {
 				http_response_code(200);
-				echo renderLoginResponse([
+				echo renderResponse([
 					"message" => "Login bem-sucedido!",
 					"user" => [
 						"name" => $user->name,
@@ -28,11 +28,11 @@ class LoginController {
 				]);
 			} else {
 				http_response_code(401);
-				echo renderLoginResponse(["message" => "Usuário ou senha inválidos."]);
+				echo renderResponse(["message" => "Usuário ou senha inválidos."]);
 			}
 		} else {
 			http_response_code(400);
-			echo renderLoginResponse(["message" => "Dados de login não fornecidos."]);
+			echo renderResponse(["message" => "Dados de login não fornecidos."]);
 		}
 	}
 }
