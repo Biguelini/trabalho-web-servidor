@@ -1,0 +1,23 @@
+.containerLogin {
+  border: 2px solid white;
+  background: var(--bg-color-component);
+  padding: 100px 80px;
+  border-radius: 10px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.containerLogin form label {
+  display: none;
+}
+
+.containerLogin form {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.containerLogin form input {
+  border-radius: 10px;
+  padding: 12px 8px;
+}
