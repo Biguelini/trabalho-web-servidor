@@ -3,22 +3,38 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 
+import { Link, useLocation } from 'react-router-dom';
+
 function Navbar() {
+
+  const location = useLocation()
+  const isUserPage = location.pathname === "/login"
+
   return (
     <>
       <div className="containerNavbar">
-        <div className="navbar">
+        <nav>
           <ul>
-            <div className='buscar'>
-              <input type="text" placeholder='buscar' name='buscar' />
-              <SearchIcon/>
-            </div>
-            <li><a href="">Login</a></li>
-            <li><a href="">Cadastrar</a></li>
-            <li><a href=""><ShoppingCartIcon fontSize='large' /></a></li>
-            <li><a href=""><AccountCircleIcon fontSize='large' /></a></li>
+            {isUserPage ?
+              (
+                <>
+                  <li className='home'><Link to="/">home</Link></li>
+                  <li className='cadastro'><Link to="/cadastro">Cadastrar</Link></li>
+                </>
+              ) :
+              (
+                <>
+                  <div className='buscar'>
+                    <input type="text" placeholder='buscar' name='buscar' />
+                    <SearchIcon />
+                  </div>
+                  <li className='login'><Link to="/login">Login</Link></li>
+                  <li className='cadastro'><Link to="/cadastro">Cadastrar</Link></li>
+                  <li className='carrinho'><Link to="/carrinho"><ShoppingCartIcon fontSize='large' /></Link></li>
+                  <li className='user'><Link to="/user"><AccountCircleIcon fontSize='large' /></Link></li>
+                </>)}
           </ul>
-        </div>
+        </nav>
       </div>
     </>
   )

@@ -1,8 +1,12 @@
-.containerNavbar {
-  background: rgba(0, 0, 0, 0.5);
+.containerDisabled{
+  display: none;
 }
 
-.navbar a {
+.containerNavbar {
+  background: var(--bg-color-component);
+}
+
+nav a {
   text-decoration: none;
   color: white;
   cursor: pointer;
@@ -10,12 +14,12 @@
   transition: all 0.5s ease;
 }
 
-.navbar a:hover {
-  color: rgb(105, 105, 212);
+nav a:hover {
+  color: var(--bg-color-hover);
   transition: all 0.3s ease;
 }
 
-.navbar {
+nav {
   padding: 30px 0px;
   margin: 0 auto;
   max-width: 1280px;
@@ -28,7 +32,7 @@
   display: flex;
   align-items: center;
   border: 1px solid white;
-  background: rgba(61, 60, 60, 0.5);
+  
   border-radius: 10px;
 }
 
@@ -36,52 +40,52 @@
   background: black;
 }
 
-.navbar ul input {
+nav ul input {
   padding: 0px 0px 0px 15px;
   height: 100%;
   background: none;
   border: none;
 }
 
-.navbar ul input:focus {
+nav ul input:focus {
   outline: none;
   caret-color: white;
 }
 
-.navbar ul li {
+nav ul li {
   list-style: none;
   display: flex;
   align-items: center;
 }
 
-.navbar ul li:nth-child(2) a {
+.login a {
   border: 1px solid white;
-  background: rgb(116, 106, 206);
+  background: var(--bg-color-hover);
   border-radius: 10px;
   padding: 5px 20px;
 }
 
-.navbar ul li:nth-child(2) a:hover {
+.login a:hover {
   border: 1px solid white;
-  background: rgb(32, 32, 97);
+  background: var(--bg-color-hover-filled);
 }
 
-.navbar ul li:nth-child(3) a {
+.home a, .cadastro a {
   border: 1px solid white;
   border-radius: 10px;
   padding: 5px 20px;
 }
 
-.navbar ul li:nth-child(3) a:hover {
+.home a:hover, .cadastro a:hover {
   border: 1px solid white;
-  background: rgb(116, 106, 206);
+  background: var(--bg-color-hover);
   color: white;
   border-radius: 10px;
   padding: 5px 20px;
 }
 
 
-.navbar ul{
+nav ul{
   display: flex;
   justify-content: end;
   gap: 40px;

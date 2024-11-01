@@ -1,15 +1,15 @@
+
 import './App.css'
-import Carousel from './components/carousel'
+
+import { Outlet } from "react-router-dom"
 import Navbar from './components/navbar'
-import Produtos from './components/produtos'
 
 function App() {
 
   return (
     <>
       <Navbar/>
-      <Carousel/>
-      <Produtos/>
+      <Outlet />
     </>
   )
 }
