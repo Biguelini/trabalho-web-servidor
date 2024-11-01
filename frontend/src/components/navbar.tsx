@@ -18,8 +18,7 @@ function Navbar() {
             {isUserPage ?
               (
                 <>
-                  <li className='home'><Link to="/">home</Link></li>
-                  <li className='cadastro'><Link to="/cadastro">Cadastrar</Link></li>
+                  <li className='home'><Link to="/">Home</Link></li>
                 </>
               ) :
               (

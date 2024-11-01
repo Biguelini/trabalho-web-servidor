@@ -18,6 +18,9 @@ function FormularioLogin() {
 
           <label htmlFor="">Repita a senha:</label>
           <input type="password" placeholder="Repita a senha:"/>
+
+          <input type="button" className="actionButtonPrimary" value={"Acessar"}/>
+          <input type="button" className="actionButtonSecondary" value={"Cadastrar"}/>
         </form>
       </div>
     </>

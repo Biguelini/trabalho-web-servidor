@@ -1,8 +1,9 @@
+import FormularioCadastro from "../components/formularioCadastro"
 
 function Cadastro() {
   return (
     <>
-      <h1>cadastro</h1>
+      <FormularioCadastro/>
     </>
   )
 }

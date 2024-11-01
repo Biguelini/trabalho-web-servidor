@@ -7,6 +7,7 @@ import Error from "./pages/error"
 
 import { createBrowserRouter } from 'react-router-dom'
 import Cadastro from "./pages/cadastro"
+import Carrinho from "./pages/carrinho"
 
 const Router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const Router = createBrowserRouter([
       {
         path: "cadastro",
         element: <Cadastro/>
+      },
+      {
+        path: "carrinho",
+        element: <Carrinho/>
       }
     ]
   },
