@@ -1,14 +1,28 @@
 <?php
-require_once 'controllers/LoginController.php';
-require_once 'controllers/CadastroController.php';
 
-header("Content-Type: application/json; charset=UTF-8");
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Routing\Router;
+use Illuminate\Routing\RouteCollection;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Routing\UrlGenerator;
 
-$loginController = new LoginController();
-$cadastroController = new CadastroController();
+require_once __DIR__ . '/vendor/autoload.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['REQUEST_URI'], '/login') !== false) {
-	$loginController->login();
-} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['REQUEST_URI'], '/register') !== false) {
-	$cadastroController->cadastro();
-}
+$container = new Container;
+Facade::setFacadeApplication($container);
+
+$events = new Dispatcher($container);
+$routeCollection = new RouteCollection();
+$router = new Router($events, $container);
+$container->instance('router', $router);
+
+$request = Request::capture();
+$url = new UrlGenerator($routeCollection, $request);
+$container->instance('url', $url);
+
+require_once __DIR__ . '/src/routes/main.php';
+
+$response = $router->dispatch($request);
+$response->send();
