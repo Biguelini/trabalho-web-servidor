@@ -4,6 +4,7 @@
 
 .containerNavbar {
   background: var(--bg-color-component);
+  margin-bottom: 20px;
 }
 
 nav a {

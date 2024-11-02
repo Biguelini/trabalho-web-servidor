@@ -1,4 +1,5 @@
 import "./formularioLogin.css"
+import { Link } from 'react-router-dom';
 
 function FormularioLogin() {
   return (
@@ -7,20 +8,15 @@ function FormularioLogin() {
         <form action="submit">
           <h1>Login</h1>
 
-          <label htmlFor="">Nome</label>
-          <input type="text" placeholder="Nome:"/>
-
-          <label htmlFor="">Sobrenome</label>
-          <input type="text" placeholder="Sobrenome:"/>
+          <label htmlFor="username">Username</label>
+          <input type="text" placeholder="Username:"/>
 
           <label htmlFor="">Senha</label>
           <input type="password" placeholder="Senha:"/>
 
-          <label htmlFor="">Repita a senha:</label>
-          <input type="password" placeholder="Repita a senha:"/>
 
-          <input type="button" className="actionButtonPrimary" value={"Acessar"}/>
-          <input type="button" className="actionButtonSecondary" value={"Cadastrar"}/>
+          <input type="submit" className="actionButtonPrimary" value={"Acessar"}/>
+          <Link to ="/cadastro" className="linkCadastro"><input type="button" className="actionButtonSecondary" value={"Cadastrar"}/></Link>
         </form>
       </div>
     </>

@@ -4,7 +4,7 @@
   padding: 80px;
   border-radius: 10px;
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 .containerLogin form label {
@@ -43,6 +43,7 @@
 
 .actionButtonSecondary {
   cursor: pointer;
+  width: 100%;
 }
 
 .actionButtonSecondary:hover {
