@@ -27,6 +27,7 @@ function Navbar() {
                     <input type="text" placeholder='buscar' name='buscar' />
                     <SearchIcon />
                   </div>
+                  <li className='home'><Link to="/">Home</Link></li>
                   <li className='login'><Link to="/login">Login</Link></li>
                   <li className='cadastro'><Link to="/cadastro">Cadastrar</Link></li>
                   <li className='carrinho'><Link to="/carrinho"><ShoppingCartIcon fontSize='large' /></Link></li>
