@@ -31,13 +31,12 @@ function FormularioLogin() {
           <h1>Login</h1>
 
           <label htmlFor="username">Username</label>
-          <input type="text" placeholder="Username:" onChange={(e) => { setUsername(e.target.value) }} />
+          <input required type="text" placeholder="Username:" onChange={(e) => { setUsername(e.target.value) }} />
 
           <label htmlFor="">Senha</label>
-          <input type="password" placeholder="Senha:" onChange={(e) => { setPassword(e.target.value) }} />
+          <input required type="password" placeholder="Senha:" onChange={(e) => { setPassword(e.target.value) }} />
 
-
-          <input type="submit" className="actionButtonPrimary" value={"Acessar"} />
+          <Link to="/user" ><input type="submit" className="actionButtonPrimary" value={"Acessar"} /></Link>
           <Link to="/cadastro" className="linkCadastro"><input type="button" className="actionButtonSecondary" value={"Cadastrar"} /></Link>
         </form>
       </div>
