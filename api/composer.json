@@ -8,6 +8,7 @@
         "illuminate/support": "^11.30",
         "illuminate/container": "^11.30",
         "illuminate/events": "^11.30",
-        "illuminate/routing": "^11.30"
+        "illuminate/routing": "^11.30",
+        "symfony/polyfill-mbstring": "^1.31"
     }
 }
