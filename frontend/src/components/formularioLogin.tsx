@@ -36,7 +36,7 @@ function FormularioLogin() {
           <label htmlFor="">Senha</label>
           <input required type="password" placeholder="Senha:" onChange={(e) => { setPassword(e.target.value) }} />
 
-          <Link to="/user" ><input type="submit" className="actionButtonPrimary" value={"Acessar"} /></Link>
+          <input type="submit" className="actionButtonPrimary" value={"Acessar"} />
           <Link to="/cadastro" className="linkCadastro"><input type="button" className="actionButtonSecondary" value={"Cadastrar"} /></Link>
         </form>
       </div>
