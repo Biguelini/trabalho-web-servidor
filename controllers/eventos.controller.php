@@ -3,9 +3,11 @@
 require(__DIR__ . '/../models/eventos.model.php');
 require(__DIR__ . '/../views/eventos.view.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['evento'], $_POST['data'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['evento'], $_POST['local'], $_POST['obs'], $_POST['data'])) {
     $novoEvento = [
         'nome' => $_POST['evento'],
+        'local' => $_POST['local'],
+        'obs' => $_POST['obs'],
         'data' => $_POST['data'],
         'pessoas' => []
     ];
