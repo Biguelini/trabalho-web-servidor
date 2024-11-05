@@ -38,3 +38,5 @@
 		</tr>
 	<?php endforeach; ?>
 </table>
+
+<a href="/controllers/logout.controller.php">Sair</a>
