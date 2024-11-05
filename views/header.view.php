@@ -12,7 +12,9 @@
     <header>
         <nav class="menu">
             <ul class="menu-content">
-                <li><a href="/" style="color: white;">Home</a></li>
+                <li><a href="/home" style="color: white;">Home</a></li>
+                <li><a href="/pessoas" style="color: white;">Login</a></li>
+                <li><a href="/bebidas" style="color: white;">Home</a></li>
                 <li><a href="/login" style="color: white;">Login</a></li>
             </ul>
         </nav>
