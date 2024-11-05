@@ -31,7 +31,7 @@
             </tbody>
         </table>
 
-        <form method="POST" action="/trabalho-web-servidor/controllers/bebidas.controller.php?evento=<?= urlencode($nomeEvento) ?>">
+        <form method="POST" action="/controllers/bebidas.controller.php?evento=<?= urlencode($nomeEvento) ?>">
             <div class="form-group">
                 <label for="nome">Nome da Bebida:</label>
                 <input type="text" name="nome" class="form-control bg-secondary text-white" required>
@@ -55,7 +55,7 @@
             <button type="submit" class="btn btn-danger">Adicionar</button>
         </form>
 
-        <a href="/trabalho-web-servidor/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
+        <a href="/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
     </div>
 </body>
 </html>

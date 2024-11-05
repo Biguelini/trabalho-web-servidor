@@ -56,15 +56,15 @@
                         <td><?= htmlspecialchars($evento['obs']) ?></td>
                         <td><?= htmlspecialchars($evento['data']) ?></td>
                         <td>
-                            <a href="/trabalho-web-servidor/controllers/pessoas.controller.php?evento=<?= htmlspecialchars($evento['nome']) ?>" class="btn btn-info btn-sm">Ver Pessoas</a>
-                            <a href="/trabalho-web-servidor/controllers/bebidas.controller.php?evento=<?= htmlspecialchars($evento['nome']) ?>" class="btn btn-info btn-sm">Adicionar Bebidas</a>
+                            <a href="/controllers/pessoas.controller.php?evento=<?= htmlspecialchars($evento['nome']) ?>" class="btn btn-info btn-sm">Ver Pessoas</a>
+                            <a href="/controllers/bebidas.controller.php?evento=<?= htmlspecialchars($evento['nome']) ?>" class="btn btn-info btn-sm">Adicionar Bebidas</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
 
-        <a href="/trabalho-web-servidor/controllers/logout.controller.php" class="btn btn-danger">Sair</a>
+        <a href="/controllers/logout.controller.php" class="btn btn-danger">Sair</a>
     </div>
     <footer><?php require('footer.view.php'); ?></footer>
 

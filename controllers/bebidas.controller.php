@@ -2,7 +2,7 @@
 session_start();
 
 if (empty($_SESSION['logado']) || $_SESSION['logado'] == false) {
-	header('Location: /trabalho-web-servidor/controllers/login.controller.php');
+	header('Location: /controllers/login.controller.php');
 }
 
 require(__DIR__ . '/../models/bebidas.model.php');

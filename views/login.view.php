@@ -14,7 +14,7 @@
         </header>
 
         <main>
-            <form method="POST" action="/trabalho-web-servidor/controllers/login.controller.php">
+            <form method="POST" action="/controllers/login.controller.php">
                 <?php if ($erro) : ?>
                     <div class="alert alert-danger" role="alert">
                         Usuário ou Senha inválidos! Tente novamente.
