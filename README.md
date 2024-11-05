@@ -14,6 +14,7 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 2. Entre na pasta trabalho-web-servidor
 3. Rode o comando php -S localhost:8000
 4. Acesse localhost:8000 no seu navegador
+5. Utilize o username "admin" e a senha "123456"
 ```
 
 # To-do
