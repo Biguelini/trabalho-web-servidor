@@ -26,12 +26,12 @@
 
 				<div class="form-group">
 					<label>Usuário:</label>
-					<input type="text" name="usuario" class="form-control" required />
+					<input type="text" name="usuario" class="form-control bg-secondary text-white" required />
 				</div>
 
 				<div class="form-group">
 					<label>Senha:</label>
-					<input type="password" name="senha" class="form-control" required />
+					<input type="password" name="senha" class="form-control bg-secondary text-white" required />
 				</div>
 
 				<button type="submit" class="btn btn-primary">Entrar</button>

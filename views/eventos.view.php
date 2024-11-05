@@ -43,7 +43,7 @@
 
 			<div class="form-group">
 				<label for="obs" class="form-label">Observações do Evento:</label>
-				<input type="text" name="obs" class="form-control bg-secondary text-white" required>
+				<input type="text" name="obs" class="form-control bg-secondary text-white">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Adicionar</button>
