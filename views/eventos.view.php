@@ -12,32 +12,6 @@
 
     <div class="container mt-5">
         <h1 class="text-center text-info">Eventos</h1>
-
-        <form method="POST" action="" class="mt-4">
-            <h2 class="text-light">Adicionar Evento</h2>
-            <div class="form-group">
-                <label for="evento" class="form-label">Nome do Evento:</label>
-                <input type="text" name="evento" class="form-control bg-secondary text-white" required>
-            </div>
-
-            <div class="form-group">
-                <label for="data" class="form-label">Data:</label>
-                <input type="date" name="data" class="form-control bg-secondary text-white" required>
-            </div>
-
-            <div class="form-group">
-                <label for="local" class="form-label">Local do Evento:</label>
-                <input type="text" name="local" class="form-control bg-secondary text-white" required>
-            </div>
-
-            <div class="form-group">
-                <label for="obs" class="form-label">Observações do Evento:</label>
-                <input type="text" name="obs" class="form-control bg-secondary text-white" required>
-            </div>
-
-            <button type="submit" class="btn btn-danger">Adicionar</button>
-        </form>
-
         <table class="table table-bordered mt-4 bg-secondary text-white">
             <thead class="thead-dark">
                 <tr>
@@ -63,6 +37,32 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <form method="POST" action="" class="mt-4">
+            <h2 class="text-light">Adicionar Evento</h2>
+            <div class="form-group">
+                <label for="evento" class="form-label">Nome do Evento:</label>
+                <input type="text" name="evento" class="form-control bg-secondary text-white" required>
+            </div>
+
+            <div class="form-group">
+                <label for="data" class="form-label">Data:</label>
+                <input type="date" name="data" class="form-control bg-secondary text-white" required>
+            </div>
+
+            <div class="form-group">
+                <label for="local" class="form-label">Local do Evento:</label>
+                <input type="text" name="local" class="form-control bg-secondary text-white" required>
+            </div>
+
+            <div class="form-group">
+                <label for="obs" class="form-label">Observações do Evento:</label>
+                <input type="text" name="obs" class="form-control bg-secondary text-white" required>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Adicionar</button>
+        </form>
+
+
 
         <a href="/controllers/logout.controller.php" class="btn btn-danger">Sair</a>
     </div>
