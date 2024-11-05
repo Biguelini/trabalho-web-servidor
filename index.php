@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    
-    <!-- Algum mecanismo de rota -->
     <?php require('controllers/eventos.controller.php'); ?>
 </body>
 
