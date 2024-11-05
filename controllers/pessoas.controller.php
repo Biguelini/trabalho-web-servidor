@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 $erros = [];
@@ -14,13 +15,20 @@ if (empty($_SESSION['logado']) || $_SESSION['logado'] == false) {
 
 if (preg_match("/\d/", $nome)) {
 	$erros[] = "O nome não pode conter números.";
-	$_SESSION['erros'] = $erros;
+}
+
+if ($email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	$erros[] = "O email não é válido.";
+}
+
+if ($telefone && !preg_match("/^\d{11}$/", $telefone)) {
+	$erros[] = "O telefone deve conter exatamente 11 dígitos.";
 }
 
 if (isset($idade)) {
 	$idade = (int)$idade;
 	if ($idade < 0 || $idade > 120) {
-			$erros[] = "A idade deve ser um número entre 0 e 120.";
+		$erros[] = "A idade deve ser um número entre 0 e 120.";
 	}
 } else {
 	$erros[] = "A idade é um campo obrigatório.";
