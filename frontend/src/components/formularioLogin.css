@@ -35,6 +35,7 @@
   background: var(--bg-color-hover);
   color: white;
   cursor: pointer;
+  width: 100%;
 }
 
 .actionButtonPrimary:hover {

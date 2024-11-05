@@ -18,9 +18,10 @@ class LoginController {
 		);
 
 		$user->setId(1);
-		return new JsonResponse($user, 200);
 
-		if ($request->username == $user->getUsername() &&  $request->password == $user->getPassword()) {
+		$data = json_decode($request->getContent(), true);
+
+		if ($data['username'] == $user->getUsername() &&  $data['password'] == $user->getPassword()) {
 			return new JsonResponse($user, 200);
 		}
 

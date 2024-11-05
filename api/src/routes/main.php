@@ -8,6 +8,7 @@ use App\Controllers\PerfilController;
 use App\Controllers\RegisterController;
 
 Route::group(['prefix' => 'api'], function () {
+
 	Route::group(['prefix' => 'login'], function () {
 		Route::post('/', [LoginController::class, 'login']);
 	});
@@ -20,4 +21,5 @@ Route::group(['prefix' => 'api'], function () {
 		Route::get('/{id}', [PerfilController::class, 'get']);
 		Route::put('/{id}', [PerfilController::class, 'update']);
 	});
+	
 });
