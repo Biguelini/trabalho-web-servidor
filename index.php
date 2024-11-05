@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <?php require('controllers/login.controller.php'); ?>
+<?php require('controllers/login.controller.php'); ?>
+        
 </body>
 
 </html>

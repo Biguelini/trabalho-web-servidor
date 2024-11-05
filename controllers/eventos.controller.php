@@ -3,7 +3,7 @@
 session_start();
 
 if (empty($_SESSION['logado']) || $_SESSION['logado'] == false) {
-	header('Location: /controllers/login.controller.php');
+	header('Location: /trabalho-web-servidor/controllers/login.controller.php');
 }
 
 require(__DIR__ . '/../models/eventos.model.php');
@@ -20,6 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['evento'], $_POST['loc
 
 	$_SESSION['eventos'][] = $novoEvento;
 
-	header('Location: /controllers/eventos.controller.php');
+	header('Location: /trabalho-web-servidor/controllers/eventos.controller.php');
 	exit;
 }
