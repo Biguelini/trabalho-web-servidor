@@ -10,12 +10,11 @@
 </head>
 <body>
     <header>
-        <nav class="menu">
+        <nav class="navbar-nav">
             <ul class="menu-content">
                 <li><a href="/home" style="color: white;">Home</a></li>
-                <li><a href="/pessoas" style="color: white;">Login</a></li>
-                <li><a href="/bebidas" style="color: white;">Home</a></li>
-                <li><a href="/login" style="color: white;">Login</a></li>
+                <li><a href="/controllers/bebidas.controller.php" style="color: white;">Bebidas</a></li>
+                <li><a class="bg-danger" href="/controllers/logout.controller.php" style="color: white;">Sair</a></li>
             </ul>
         </nav>
     </header>

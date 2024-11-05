@@ -15,11 +15,6 @@
 
         <main>
             <form method="POST" action="/controllers/login.controller.php">
-                <?php if ($erro) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        Usuário ou Senha inválidos! Tente novamente.
-                    </div>
-                <?php endif; ?>
 
                 <div class="form-group">
                     <label>Usuário:</label>
@@ -30,6 +25,12 @@
                     <label>Senha:</label>
                     <input type="password" name="senha" class="form-control" required />
                 </div>
+
+                <?php if ($erro) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        <p>Usuário ou Senha inválidos! Tente novamente.</p>
+                    </div>
+                <?php endif; ?>
 
                 <button type="submit" class="btn btn-danger">Entrar</button>
             </form>

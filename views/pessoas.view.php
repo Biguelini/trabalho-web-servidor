@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Pessoas no Evento</title>
 </head>
+
 <body class="bg-dark text-white">
     <div class="container mt-5">
         <h1 class="text-center text-info">Pessoas no Evento: <?= htmlspecialchars($nomeEvento) ?></h1>
@@ -36,26 +38,36 @@
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" class="form-control bg-secondary text-white" required>
             </div>
-            
+
             <div class="form-group">
                 <label for="idade">Idade:</label>
                 <input type="number" name="idade" class="form-control bg-secondary text-white" required>
             </div>
-            
+
             <div class="form-group">
                 <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" class="form-control bg-secondary text-white" required>
+                <input type="tel" name="telefone" class="form-control bg-secondary text-white" required>
             </div>
-            
+
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" name="email" class="form-control bg-secondary text-white" required>
             </div>
-            
-            <button type="submit" class="btn btn-danger">Adicionar</button>
+
+            <?php
+            if (isset($_SESSION['erros']) && !empty($_SESSION['erros'])) {
+                foreach ($_SESSION['erros'] as $erro) {
+                    echo "<div class='alert alert-danger'>" . htmlspecialchars($erro) . "</div>";
+                }
+                unset($_SESSION['erros']);
+            }
+            ?>
+
+            <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>
 
-        <a href="/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
+        <a href="/controllers/eventos.controller.php" class="btn btn-secondary mt-3">Voltar</a>
     </div>
 </body>
+
 </html>
