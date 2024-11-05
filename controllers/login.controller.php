@@ -3,7 +3,9 @@ $usuario = $_POST['usuario'] ?? '';
 $senha = $_POST['senha'] ?? '';
 $erro = false;
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 
 if ($usuario == 'admin' && $senha == '123456') {
 	$_SESSION['logado'] = true;

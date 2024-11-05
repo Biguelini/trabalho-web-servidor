@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 
 if (empty($_SESSION['logado']) || $_SESSION['logado'] == false) {
 	header('Location: /controllers/login.controller.php');
