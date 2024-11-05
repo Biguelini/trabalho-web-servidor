@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Pessoas no Evento</title>
 </head>
-<?php require('header.view.php'); ?>
+
 <body class="bg-dark text-white">
     <div class="container mt-5">
         <h1 class="text-center text-info">Pessoas no Evento: <?= htmlspecialchars($nomeEvento) ?></h1>
@@ -58,6 +58,6 @@
 
         <a href="/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
     </div>
-    <?php require('footer.view.php'); ?>
+
 </body>
 </html>
