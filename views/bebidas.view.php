@@ -11,6 +11,15 @@
 
 <body class="bg-dark text-white">
 	<div class="container mt-5">
+		<?php
+		if (isset($_SESSION['erros']) && !empty($_SESSION['erros'])) {
+			foreach ($_SESSION['erros'] as $erro) {
+				echo "<div class='alert alert-danger'>" . htmlspecialchars($erro) . "</div>";
+			}
+			unset($_SESSION['erros']);
+		}
+		?>
+
 		<a href="/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
 
 		<h1 class="text-center text-info">Bebidas no Evento: <?= htmlspecialchars($nomeEvento) ?></h1>
@@ -33,7 +42,7 @@
 
 			<div class="form-group">
 				<label for="temperatura">Temperatura da Bebida:</label>
-				<input type="text" name="temperatura" class="form-control bg-secondary text-white" required>
+				<input type="number" name="temperatura" class="form-control bg-secondary text-white" required>
 			</div>
 
 			<button type="submit" class="btn btn-primary">Adicionar</button>

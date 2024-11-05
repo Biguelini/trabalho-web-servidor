@@ -18,7 +18,7 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 ```
 
 # To-do
-- Cálculo automátido de quantidade por pessoa
+- Cálculo automático da quantidade necessária de acordo com a quantidade recomendada
 - Envio de emails para cada convidado
 - Envio de link com um preview do evento
 
