@@ -11,27 +11,6 @@
 <body class="bg-dark text-white">
     <div class="container mt-5">
         <h1 class="text-center text-info">Bebidas no Evento: <?= htmlspecialchars($nomeEvento) ?></h1>
-        <table class="table table-bordered mt-4 bg-secondary text-white">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Nome</th>
-                    <th>Marca</th>
-                    <th>Quantidade</th>
-                    <th>Temperatura</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($bebidas as $bebida): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($bebida['nome']) ?></td>
-                        <td><?= htmlspecialchars($bebida['marca']) ?></td>
-                        <td><?= htmlspecialchars($bebida['quantidade']) ?></td>
-                        <td><?= htmlspecialchars($bebida['temperatura']) ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
         <form method="POST" action="/controllers/bebidas.controller.php?evento=<?= urlencode($nomeEvento) ?>">
             <div class="form-group">
                 <label for="nome">Nome da Bebida:</label>
@@ -55,6 +34,28 @@
             
             <button type="submit" class="btn btn-danger">Adicionar</button>
         </form>
+        <table class="table table-bordered mt-4 bg-secondary text-white">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Quantidade</th>
+                    <th>Temperatura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($bebidas as $bebida): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($bebida['nome']) ?></td>
+                        <td><?= htmlspecialchars($bebida['marca']) ?></td>
+                        <td><?= htmlspecialchars($bebida['quantidade']) ?></td>
+                        <td><?= htmlspecialchars($bebida['temperatura']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+
 
         <a href="/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
     </div>

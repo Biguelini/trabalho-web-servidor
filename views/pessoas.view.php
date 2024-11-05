@@ -11,27 +11,7 @@
 <body class="bg-dark text-white">
     <div class="container mt-5">
         <h1 class="text-center text-info">Pessoas no Evento: <?= htmlspecialchars($nomeEvento) ?></h1>
-        <table class="table table-bordered mt-4 bg-secondary text-white">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($pessoas as $pessoa): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($pessoa['nome']) ?></td>
-                        <td><?= htmlspecialchars($pessoa['idade']) ?></td>
-                        <td><?= htmlspecialchars($pessoa['telefone']) ?></td>
-                        <td><?= htmlspecialchars($pessoa['email']) ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
+        
         <form method="POST" action="/controllers/pessoas.controller.php?evento=<?= urlencode($nomeEvento) ?>">
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -55,6 +35,27 @@
             
             <button type="submit" class="btn btn-danger">Adicionar</button>
         </form>
+        <table class="table table-bordered mt-4 bg-secondary text-white">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($pessoas as $pessoa): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($pessoa['nome']) ?></td>
+                        <td><?= htmlspecialchars($pessoa['idade']) ?></td>
+                        <td><?= htmlspecialchars($pessoa['telefone']) ?></td>
+                        <td><?= htmlspecialchars($pessoa['email']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
 
         <a href="/controllers/eventos.controller.php" class="btn btn-danger mt-3">Voltar</a>
     </div>
