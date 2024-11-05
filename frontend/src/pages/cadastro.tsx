@@ -1,11 +1,11 @@
-import FormularioCadastro from "../components/formularioCadastro"
+import FormularioCadastro from "../components/cadastro/formularioCadastro"
 
 function Cadastro() {
-  return (
-    <>
-      <FormularioCadastro/>
-    </>
-  )
+	return (
+		<>
+			<FormularioCadastro />
+		</>
+	)
 }
 
 export default Cadastro

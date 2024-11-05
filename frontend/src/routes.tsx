@@ -10,33 +10,33 @@ import Cadastro from "./pages/cadastro"
 import Carrinho from "./pages/carrinho"
 
 const Router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: <Home />
-      },
-      {
-        path: "user",
-        element: <User />,
-      },
-      {
-        path: "login",
-        element: <Login />
-      },
-      {
-        path: "cadastro",
-        element: <Cadastro/>
-      },
-      {
-        path: "carrinho",
-        element: <Carrinho/>
-      }
-    ]
-  },
+	{
+		path: "/",
+		element: <App />,
+		errorElement: <Error />,
+		children: [
+			{
+				path: "/",
+				element: <Home />
+			},
+			{
+				path: "user",
+				element: <User />,
+			},
+			{
+				path: "login",
+				element: <Login />
+			},
+			{
+				path: "cadastro",
+				element: <Cadastro />
+			},
+			{
+				path: "carrinho",
+				element: <Carrinho />
+			}
+		]
+	},
 ])
 
 export default Router

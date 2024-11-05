@@ -1,11 +1,11 @@
-import FormularioLogin from "../components/formularioLogin"
+import FormularioLogin from "../components/login/formularioLogin"
 
 function Login() {
-  return (
-    <>
-      <FormularioLogin/>
-    </>
-  )
+	return (
+		<>
+			<FormularioLogin />
+		</>
+	)
 }
 
 export default Login

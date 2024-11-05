@@ -1,13 +1,13 @@
-import Carousel from "../components/carousel"
-import Produtos from "../components/produtos"
+import Carousel from "../components/home/carousel"
+import Produtos from "../components/home/produtos"
 
 function Home() {
-  return(
-    <>
-      <Carousel/>
-      <Produtos/>
-    </>
-  )
+	return (
+		<>
+			<Carousel />
+			<Produtos />
+		</>
+	)
 }
 
 export default Home
