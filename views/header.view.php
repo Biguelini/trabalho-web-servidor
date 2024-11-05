@@ -7,15 +7,24 @@
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Menu</title>
-</head>
-<body>
-    <header>
-        <nav class="menu">
-            <ul class="menu-content">
-                <li><a href="/home" style="color: white;">Home</a></li>
-                <li><a href="/pessoas" style="color: white;">Login</a></li>
-                <li><a href="/bebidas" style="color: white;">Home</a></li>
-                <li><a href="/login" style="color: white;">Login</a></li>
-            </ul>
+</head>        
+    <header class="menu p-1" style="background-color: #1A1A1D;">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0 ">
+            <div class="container-fluid">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/controllers/eventos.controller.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/controllers/pessoas.controller.php">Pessoas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/controllers/bebidas.controller.php">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/controllers/logout.controller.php" class="btn btn-danger">Sair</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>

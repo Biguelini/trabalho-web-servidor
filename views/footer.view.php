@@ -9,6 +9,7 @@
     <title>Footer</title>
 </head>
 <body>
-    <footer>
+    <footer class="text-white">
         <p>&copy; <?php echo date("Y"); ?> Meu Site. Todos os direitos reservados.</p>
     </footer>
+      
