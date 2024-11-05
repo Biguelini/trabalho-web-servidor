@@ -1,3 +1,8 @@
+<head>
+	<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+	<title>Login</title>
+</head>
+
 <h1>Pessoas no Evento: <?= htmlspecialchars($nomeEvento) ?></h1>
 <table border="1">
     <tr>

@@ -1,4 +1,4 @@
 <?php
     session_start();
     session_destroy();
-    header('Location: /controllers/eventos.controller.php');
+    header('Location: /controllers/login.controller.php');

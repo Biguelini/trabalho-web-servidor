@@ -1,4 +1,9 @@
-<h1>Notas da turma</h1>
+<head>
+	<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+	<title>Eventos</title>
+</head>
+
+<h1>Eventos</h1>
 
 <form method="POST" action="">
 	<h2>Adicionar Evento</h2>
