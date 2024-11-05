@@ -14,7 +14,6 @@ if ($usuario == 'admin' && $senha == '123456') {
 	$erro = true;
 }
 
-//Checar se o usuário já está logado
 if (!empty($_SESSION['logado']) && $_SESSION['logado']) {
 	header('Location: /controllers/eventos.controller.php');
 }

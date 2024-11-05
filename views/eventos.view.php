@@ -9,7 +9,6 @@
     <title>Eventos</title>
 </head>
 <body class="bg-dark text-white">
-    <header><?php require('header.view.php'); ?></header>
     <div class="container mt-5">
         <h1 class="text-center text-info">Eventos</h1>
 
@@ -66,7 +65,6 @@
 
         <a href="/controllers/logout.controller.php" class="btn btn-danger">Sair</a>
     </div>
-    <footer><?php require('footer.view.php'); ?></footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
