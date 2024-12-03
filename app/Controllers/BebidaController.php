@@ -66,13 +66,13 @@ class BebidaController {
 		require(__DIR__ . '/../views/edit_bebida.php');
 	}
 
-	public function delete($id) {
+	public function delete($evento_id, $id) {
 		session_start();
 		if (!isset($_SESSION['user'])) {
 			header("Location: /login");
 			exit;
 		}
-
+		echo $id;
 		$bebida = Bebida::find($id);
 		$evento_id = $bebida->getEventoId();
 
