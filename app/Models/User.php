@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Database;
+use PDO;
+
 class User {
 	private $id;
 	private $username;
@@ -48,15 +51,17 @@ class User {
 	}
 
 	public static function validateLogin($username, $password) {
-		$users = [
-			new User(1, 'admin', '123456', 'Administrador')
-		];
+		$db = Database::getInstance()->getConnection();
+		$stmt = $db->prepare('SELECT * FROM users WHERE username = :username');
+		$stmt->bindParam(':username', $username);
+		$stmt->execute();
+		$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-		foreach ($users as $user) {
-			if ($user->getUsername() === $username && $user->getPassword() === $password) {
-				return $user;
-			}
+		// Verificando se o usuário existe e se a senha bate
+		if ($user && $user['password'] === $password) {
+			return new User($user['id'], $user['username'], $user['password'], $user['name']);
 		}
+
 		return null;
 	}
 }

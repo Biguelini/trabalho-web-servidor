@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Bebida;
 use App\Models\Event;
 
 class EventController {
@@ -60,13 +61,14 @@ class EventController {
 	}
 
 	public function show($id) {
-		session_start();
 		if (!isset($_SESSION['user'])) {
 			header("Location: /login");
 			exit;
 		}
 
 		$event = Event::find($id);
+
+		$bebidas = Bebida::getByEventoId($id);
 
 		require(__DIR__ . '/../views/event_details.php');
 	}
