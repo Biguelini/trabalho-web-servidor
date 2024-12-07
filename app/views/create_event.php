@@ -10,27 +10,33 @@
 </head>
 
 <body class="bg-dark">
-    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
-        <div class="card shadow-lg p-5" style="width: 100%; max-width: 700px; background-color: #000000; border-radius: 10px; border: 2px solid #B8621B;">
-            <h1 class="text-center mb-4" style="color: #E3CCAE;">Criar Evento</h1>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <!-- Botão de Voltar para a Página Inicial em cima do Card -->
+        <div class="mb-4 w-100 text-center">
+            <a href="/" class="btn btn-secondary btn-lg">Voltar para a Página Inicial</a>
+        </div>
+
+        <!-- Card de Criar Evento -->
+        <div class="card shadow-lg p-5" style="width: 100%; max-width: 700px; background-color: #f9f9f9; border-radius: 10px; border: 1px solid #ccc;">
+            <h1 class="text-center mb-4" style="color: #333;">Criar Evento</h1>
             <form method="POST" action="/event/create">
                 <div class="mb-4">
-                    <label for="nome" class="form-label" style="color: #E3CCAE;">Nome do Evento:</label>
+                    <label for="nome" class="form-label" style="color: #555;">Nome do Evento:</label>
                     <input type="text" id="nome" name="nome" class="form-control form-control-lg" required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="local" class="form-label" style="color: #E3CCAE;">Local:</label>
+                    <label for="local" class="form-label" style="color: #555;">Local:</label>
                     <input type="text" id="local" name="local" class="form-control form-control-lg" required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="data" class="form-label" style="color: #E3CCAE;">Data:</label>
+                    <label for="data" class="form-label" style="color: #555;">Data:</label>
                     <input type="date" id="data" name="data" class="form-control form-control-lg" required>
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn" style="background-color: #B8621B; color: #000000;">Criar Evento</button>
+                    <button type="submit" class="btn btn-lg" style="background-color: #6c757d; color: #fff;">Criar Evento</button>
                 </div>
             </form>
         </div>

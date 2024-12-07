@@ -9,36 +9,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-dark text-white">
+<body class="bg-dark text-light" style="font-family: Arial, sans-serif;">
     <div class="container mt-5">
         <!-- Título -->
-        <h1 class="text-center mb-5" style="color: #E3CCAE;">Lista de Eventos</h1>
+        <h1 class="text-center mb-5 text-white">Lista de Eventos</h1>
 
         <!-- Botões de adicionar evento e logout -->
-        <div class="mb-4 text-center">
-            <a href="/event/create">
-                <button class="btn btn-lg" style="background-color: #B8621B; color: #000000;">Adicionar Evento</button>
-            </a>
-
-            <a href="/logout">
-                <button class="btn btn-lg ms-3" style="background-color: #B8621B; color: #000000;">Logout</button>
-            </a>
+        <div class="mb-4 d-flex justify-content-center">
+            <div class="d-inline-flex gap-3">
+                <a href="/event/create" class="btn btn-lg text-light" style="background-color: #333333;">Adicionar Evento</a>
+                <a href="/logout" class="btn btn-lg text-light" style="background-color: #333333;">Logout</a>
+            </div>
         </div>
 
         <!-- Lista de Eventos -->
         <div class="row">
             <?php foreach ($events as $event): ?>
                 <div class="col-md-4 mb-4">
-                    <div class="card" style="background-color: #262A56; border: 2px solid #B8621B;">
+                    <div class="card shadow-sm" style="background-color: rgba(255, 255, 255, 0.9); border-radius: 10px;">
                         <div class="card-body">
-                            <h5 class="card-title" style="color: #E3CCAE;"><?php echo htmlspecialchars($event->getNome()); ?></h5>
-                            <p class="card-text" style="color: #E3CCAE;">Local: <?php echo htmlspecialchars($event->getLocal()); ?></p>
-                            <p class="card-text" style="color: #E3CCAE;">Data: <?php echo htmlspecialchars($event->getData()); ?></p>
+                            <h5 class="card-title text-dark"><?php echo htmlspecialchars($event->getNome()); ?></h5>
+                            <p class="card-text text-secondary">Local: <?php echo htmlspecialchars($event->getLocal()); ?></p>
+                            <p class="card-text text-secondary">Data: <?php echo htmlspecialchars($event->getData()); ?></p>
 
                             <div class="d-flex justify-content-between">
-                                <a href="/event/<?php echo $event->getId(); ?>" class="btn" style="background-color: #B8621B; color: #000000;">Detalhes</a>
-                                <a href="/event/edit/<?php echo $event->getId(); ?>" class="btn" style="background-color: #B8621B; color: #000000;">Editar</a>
-                                <a href="/event/delete/<?php echo $event->getId(); ?>" class="btn" style="background-color: #B8621B; color: #000000;">Excluir</a>
+                                <a href="/event/<?php echo $event->getId(); ?>" class="btn text-light" style="background-color: #333333;">Detalhes</a>
+                                <a href="/event/edit/<?php echo $event->getId(); ?>" class="btn text-light" style="background-color: #333333;">Editar</a>
+                                <a href="/event/delete/<?php echo $event->getId(); ?>" class="btn text-light" style="background-color: #333333;">Excluir</a>
                             </div>
                         </div>
                     </div>
