@@ -11,6 +11,8 @@ session_start();
 Router::get('/login', [UserController::class, 'showLoginForm']);
 Router::post('/login', [UserController::class, 'login']);
 Router::get('/logout', [UserController::class, 'logout']);
+Router::get('/perfil/{user_id}', [UserController::class, 'showUser']);
+Router::post('/user/update/{id}', [UserController::class, 'update']);
 
 Router::get('/', [EventController::class, 'index']);
 Router::get('/event', [EventController::class, 'index']);
@@ -27,6 +29,7 @@ Router::post('/event/{evento_id}/bebida/create', [BebidaController::class, 'crea
 Router::get('/event/{evento_id}/bebida/edit/{id}', [BebidaController::class, 'edit']);
 Router::post('/event/{evento_id}/bebida/edit/{id}', [BebidaController::class, 'edit']);
 Router::get('/event/{evento_id}/bebida/delete/{id}', [BebidaController::class, 'delete']);
+
 
 Router::error(function () {
 	http_response_code(404);

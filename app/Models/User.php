@@ -10,12 +10,16 @@ class User {
 	private $username;
 	private $password;
 	private $name;
+	private $cpf;
+	private $birth;
 
-	public function __construct($id, $username, $password, $name) {
+	public function __construct($id, $username, $password, $name, $cpf, $birth) {
 		$this->id = $id;
 		$this->username = $username;
 		$this->password = $password;
 		$this->name = $name;
+		$this->cpf = $cpf;
+		$this->birth = $birth;
 	}
 
 	public function getId() {
@@ -49,6 +53,22 @@ class User {
 	public function setName($name) {
 		$this->name = $name;
 	}
+
+	public function setCPF ($cpf){
+		$this->cpf = $cpf;
+	}
+
+	public function getCPF() {
+			return $this->cpf;
+	}
+
+	public function setBirth($birth){
+		$this->brith = $birth;
+	}
+
+	public function getBirth() {
+		return $this->birth;
+}
 
 	public static function validateLogin($username, $password) {
 		$db = Database::getInstance()->getConnection();
