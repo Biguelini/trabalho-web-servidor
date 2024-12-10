@@ -9,6 +9,9 @@ use Pecee\SimpleRouter\SimpleRouter as Router;
 
 session_start();
 
+Router::get('/cadastro', [UserController::class, 'showRegisterForm']);
+Router::post('/cadastro', [UserController::class, 'register']);
+
 Router::get('/login', [UserController::class, 'showLoginForm']);
 Router::get('/logout', [UserController::class, 'logout']);
 Router::get('/perfil/{user_id}', [UserController::class, 'showUser']);

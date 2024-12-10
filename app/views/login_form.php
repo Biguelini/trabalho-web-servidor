@@ -1,8 +1,23 @@
-<?php
-$pageTitle = 'Login'; 
-include_once __DIR__ . '/../Includes/header.php';
-?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<?php include_once __DIR__ . '/../Includes/forms/login_form.php'; ?>
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+</head>
 
-<?php include_once __DIR__ . '/../Includes/footer.php'; ?>
+<body>
+	<h1>Login</h1>
+	<form action="/login" method="POST">
+		<label for="username">Usuário:</label>
+		<input type="text" id="username" name="username" required><br><br>
+
+		<label for="password">Senha:</label>
+		<input type="password" id="password" name="password" required><br><br>
+
+		<button type="submit">Entrar</button>
+		<button><a href="/cadastro">Cadastrar</a></button>
+	</form>
+</body>
+
+</html>

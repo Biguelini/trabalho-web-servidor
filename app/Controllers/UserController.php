@@ -2,14 +2,27 @@
 
 namespace App\Controllers;
 
+use Exception;
 use App\Models\User;
 
 class UserController
 {
     public function showLoginForm()
-    {   
-        $this->ensureSessionStarted();
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
         require __DIR__ . '/../views/login_form.php';
+    }
+
+    public function showRegisterForm()
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        require __DIR__ . '/../views/register.php';
     }
 
     public function login()
@@ -39,6 +52,27 @@ class UserController
                 // Se as credenciais forem inválidas
                 echo 'Credenciais inválidas';
             }
+        }
+    }
+    public function register()
+    {
+        try {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $username = $_POST['username'] ?? '';
+                $password = $_POST['password'] ?? '';
+                $name = $_POST['name'] ?? '';
+                $cpf = $_POST['cpf'] ?? '';
+                $birth_date = $_POST['birth_date'] ?? '';
+
+                $user = new User(null, $username, $password, $name, $cpf, $birth_date);
+
+                $user->save();
+
+                header('Location: /');
+                exit;
+            }
+        } catch (Exception $e) {
+            echo 'Erro: ' . $e->getMessage();
         }
     }
 
@@ -71,7 +105,7 @@ class UserController
         $username = $_POST['username'] ?? '';
         $name = $_POST['name'] ?? '';
         $cpf = $_POST['cpf'] ?? '';
-        $birth = $_POST['birth'] ?? ''; 
+        $birth = $_POST['birth'] ?? '';
 
         $userId = $_SESSION['user']['id'];
         $this->updateUserData($userId, $username, $name, $cpf, $birth);

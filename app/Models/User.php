@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Database;
+use Exception;
 use PDO;
 
 class User
@@ -121,5 +122,35 @@ class User
         }
 
         return $userObjects;
+    }
+
+    public function save()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
+        $stmt->execute([$this->username]);
+        $count = $stmt->fetchColumn();
+
+        if ($count > 0) {
+            throw new Exception("O nome de usuário já está em uso.");
+        }
+
+        $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE cpf = ?");
+        $stmt->execute([$this->cpf]);
+        $cpfCount = $stmt->fetchColumn();
+
+        if ($cpfCount > 0) {
+            throw new Exception("O CPF já está em uso.");
+        }
+
+        if ($this->id) {
+            $stmt = $db->prepare("UPDATE users SET username = ?, password = ?, name = ?, cpf = ?, birth_date = ? WHERE id = ?");
+            $stmt->execute([$this->username, $this->password, $this->name, $this->cpf, $this->birth_date, $this->id]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO users (username, password, name, cpf, birth_date) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$this->username, $this->password, $this->name, $this->cpf, $this->birth_date]);
+            $this->id = $db->lastInsertId();
+        }
     }
 }
