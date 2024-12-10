@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Adicionar Bebida'; 
+$pageTitle = 'Editar Bebida'; 
 include __DIR__ . '/../includes/header.php'; 
 ?>
 
@@ -7,8 +7,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="mb-4 w-100 text-center">
         <a href="/event/<?php echo isset($eventId) ? htmlspecialchars($eventId) : ''; ?>" class="btn btn-secondary btn-lg">Voltar para o Evento</a>
     </div>
-
-    <?php include __DIR__ . '/../includes/forms/edit_event_form.php'; ?> 
+    <?php include __DIR__ . '/../includes/forms/edit_event_form.php'; ?>
 </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; 
+<?php include __DIR__ . '/../includes/footer.php';  ?>
