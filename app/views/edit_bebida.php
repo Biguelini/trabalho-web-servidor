@@ -1,14 +1,13 @@
-<h1>Editar Bebida</h1>
+<?php
+$pageTitle = 'Editar Bebida'; 
+include __DIR__ . '/../includes/header.php'; 
+?>
 
-<form method="POST">
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($bebida->getNome()); ?>" required>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="mb-4 w-100 text-center">
+        <a href="/event/<?php echo isset($eventId) ? htmlspecialchars($eventId) : ''; ?>" class="btn btn-secondary btn-lg">Voltar para o Evento</a>
+    </div>
+    <?php include __DIR__ . '/../includes/forms/edit_bebida_form.php'; ?>
+</div>
 
-    <label for="quantidade_por_pessoa">Quantidade por Pessoa</label>
-    <input type="number" id="quantidade_por_pessoa" name="quantidade_por_pessoa" value="<?php echo $bebida->getQuantidadePorPessoa(); ?>" required>
-
-    <label for="temperatura_consumo">Temperatura de Consumo</label>
-    <input type="text" id="temperatura_consumo" name="temperatura_consumo" value="<?php echo htmlspecialchars($bebida->getTemperaturaConsumo()); ?>" required>
-
-    <button type="submit">Salvar Alterações</button>
-</form>
+<?php include __DIR__ . '/../includes/footer.php';  ?>
