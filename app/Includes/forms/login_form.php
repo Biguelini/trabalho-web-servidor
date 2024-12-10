@@ -12,6 +12,7 @@
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
             <button type="submit" class="btn text-white" style="background-color: #333333;">Entrar</button>
+            <a href="/cadastro" class="btn text-white" style="background-color: #333333;">Cadastrar</a>
         </form>
     </div>
 </div>

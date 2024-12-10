@@ -1,49 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+$pageTitle = 'Cadastro'; 
+include __DIR__ . '/../Includes/header.php'; 
+?>
 
-<head>
-	<meta charset="UTF-8">
-	<title>Cadastro</title>
-</head>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
+<div class="mb-4 w-100 text-center mt-4">
+        <a href="/event/<?php echo isset($evento_id) ? htmlspecialchars($evento_id) : ''; ?>" class="btn btn-secondary btn-lg">Voltar para o Evento</a>
+    </div>
 
-<body>
-    <h1>Cadastro</h1>
-    <form action="/cadastro" method="POST">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"
-                value="<?php echo isset($user) ? htmlspecialchars($user->getUsername()) : ''; ?>" required>
-        </div>
+    <?php include __DIR__ . '/../Includes/forms/register_form.php'; ?>
+</div>
 
-        <div>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password"
-                value="<?php echo isset($user) ? htmlspecialchars($user->getPassword()) : ''; ?>" required>
-        </div>
-
-        <div>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name"
-                value="<?php echo isset($user) ? htmlspecialchars($user->getName()) : ''; ?>" required>
-        </div>
-
-        <div>
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf"
-                value="<?php echo isset($user) ? htmlspecialchars($user->getCPF()) : ''; ?>" required>
-        </div>
-
-        <div>
-            <label for="birth_date">Data de Nascimento:</label>
-            <input type="date" id="birth_date" name="birth_date"
-                value="<?php echo isset($user) ? htmlspecialchars($user->getBirth()) : ''; ?>" required>
-        </div>
-
-        <div>
-            <button type="submit">Cadastrar Usuário</button>
-            <a href="/">Voltar</a>
-        </div>
-    </form>
-</body>
-
-</html>
+<?php include __DIR__ . '/../Includes/footer.php'; ?>
