@@ -7,20 +7,12 @@ use App\Models\Bebida;
 class BebidaController {
 
 	public function create($evento_id) {
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);
-
 		if (!isset($_SESSION['user'])) {
 			header("Location: /login");
 			exit;
 		}
 
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			ini_set('display_errors', 1);
-			ini_set('display_startup_errors', 1);
-			error_reporting(E_ALL);
-
 			$nome = $_POST['nome'] ?? '';
 			$quantidade = $_POST['quantidade_por_pessoa'] ?? '';
 			$temperatura = $_POST['temperatura_consumo'] ?? '';
@@ -40,8 +32,7 @@ class BebidaController {
 		require(__DIR__ . '/../views/create_bebida.php');
 	}
 
-	public function edit($id) {
-		session_start();
+	public function edit($eventId, $id) {
 		if (!isset($_SESSION['user'])) {
 			header("Location: /login");
 			exit;
@@ -59,7 +50,7 @@ class BebidaController {
 			$bebida->setTemperaturaConsumo($temperatura);
 			$bebida->save();
 
-			header('Location: /event/' . $bebida->getEventoId());
+			header('Location: /event/' . $eventId);
 			exit;
 		}
 

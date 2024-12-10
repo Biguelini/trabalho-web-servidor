@@ -2,7 +2,7 @@
     <h1 class="text-center mb-4" style="color: #333;">Editar Bebida</h1>
     
     <?php if ($bebida): ?>
-        <form method="POST" action="/event/<?php echo isset($eventId) ? htmlspecialchars($eventId) : ''; ?>/bebida/update/<?php echo $bebida->getId(); ?>">
+        <form method="POST" action="/event/<?php echo isset($eventId) ? htmlspecialchars($eventId) : ''; ?>/bebida/edit/<?php echo $bebida->getId(); ?>">
 
             <div class="mb-4">
                 <label for="nome" class="form-label" style="color: #555;">Nome:</label>

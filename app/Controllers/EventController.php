@@ -30,10 +30,6 @@ class EventController {
     public function create() {
         $this->ensureAuthenticated();
 
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nome = $_POST['nome'] ?? '';
             $local = $_POST['local'] ?? '';
@@ -73,10 +69,6 @@ class EventController {
 
     public function delete($id) {
         $this->ensureAuthenticated();
-
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
 
         Event::delete($id);
 
