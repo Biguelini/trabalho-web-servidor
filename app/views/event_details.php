@@ -18,82 +18,38 @@
 <ul>
 	<?php foreach ($bebidas as $bebida): ?>
 		<li>
-			<?php echo htmlspecialchars($bebida->getNome()); ?> - Quantidade: <?php echo $bebida->getQuantidadePorPessoa(); ?> - Temperatura: <?php echo htmlspecialchars($bebida->getTemperaturaConsumo()); ?>
+			Nome: <?php echo htmlspecialchars($bebida->getNome()); ?> - Quantidade: <?php echo $bebida->getQuantidadePorPessoa(); ?> - Temperatura: <?php echo htmlspecialchars($bebida->getTemperaturaConsumo()); ?>
 			<a href="/event/<?php echo $bebida->getEventoId(); ?>/bebida/edit/<?php echo $bebida->getId(); ?>">Editar</a>
 			<a href="/event/<?php echo $bebida->getEventoId(); ?>/bebida/delete/<?php echo $bebida->getId(); ?>">Excluir</a>
 		</li>
-	<?php endforeach; ?>
+	<?php endforeach;?>
 </ul>
 
-<!-- Botão para abrir o modal -->
-<a href="#" id="openModal">
-    <button>Adicionar Convidado</button>
-</a>
+<h2>Convidados</h2>
 
-<!-- Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Selecionar Convidado</h2>
-    
-    <!-- Lista de usuários cadastrados -->
-    <div id="userList">
-      <?php foreach ($usuarios as $usuario): ?>
-        <div>
-          <label>
-            <input type="radio" name="user_id" value="<?php echo $usuario->getId(); ?>"> 
-            <?php echo htmlspecialchars($usuario->getNome()); ?>
-          </label>
-        </div>
-      <?php endforeach; ?>
-    </div>
-    
-    <button id="addConvidado">Adicionar Convidado</button>
-  </div>
-</div>
-
-<script>
-  // Abrir o modal
-  document.getElementById("openModal").onclick = function() {
-    document.getElementById("myModal").style.display = "block";
-  };
-
-  // Fechar o modal
-  document.getElementsByClassName("close")[0].onclick = function() {
-    document.getElementById("myModal").style.display = "none";
-  };
-
-  // Fechar o modal se clicar fora dele
-  window.onclick = function(event) {
-    if (event.target == document.getElementById("myModal")) {
-      document.getElementById("myModal").style.display = "none";
-    }
-  };
-
-  // Enviar o usuário selecionado ao adicionar
-  document.getElementById("addConvidado").onclick = function() {
-    let userId = document.querySelector('input[name="user_id"]:checked');
-    if (userId) {
-      let eventoId = <?php echo $event->getId(); ?>; // Evento ID
-      let selectedUserId = userId.value;
-      window.location.href = `/event/${eventoId}/convidado/add/${selectedUserId}`;
-    } else {
-      alert("Selecione um usuário para adicionar como convidado!");
-    }
-  };
-</script>
-
-
-<!-- <h2>Convidados</h2>
-
-<a href="/event/<?php echo $event->getId(); ?>/convidado/create">Adicionar Convidados</a>
+<form action="/event/<?php echo $event->getId(); ?>/convidado/create" method="POST">
+    <label for="convidado">Convidado</label>
+    <select id="convidado" name="user_id">
+        <?php foreach ($users as $user): ?>
+            <option value="<?php echo htmlspecialchars($user->getId()); ?>">
+                <?php echo htmlspecialchars($user->getName()); ?>
+            </option>
+        <?php endforeach;?>
+    </select>
+    <button type="submit">Adicionar Convidado</button>
+		<?php
+			if (isset($_SESSION['error'])) {
+				echo "<div class='error-message'>{$_SESSION['error']}</div>";
+				unset($_SESSION['error']); 
+		}
+		?>
+</form>
 
 <ul>
 	<?php foreach ($convidados as $convidado): ?>
 		<li>
-			<?php echo htmlspecialchars($convidado->getNome()); ?> - CPF: <?php echo htmlspecialchars($convidado->getCPF()); ?>
-			<a href="/event/<?php echo $convidado->getEventoId(); ?>/convidado/edit/<?php echo $convidado->getId(); ?>">Editar</a>
-			<a href="/event/<?php echo $convidado->getEventoId(); ?>/convidado/delete/<?php echo $convidado->getId(); ?>">Excluir</a>
+			Nome: <?php echo htmlspecialchars($convidado->getName()); ?> - CPF: <?php echo htmlspecialchars($convidado->getCpf()); ?>
+			<a href="/event/<?php echo $event->getId(); ?>/convidado/delete/<?php echo $convidado->getId(); ?>">Excluir</a>
 		</li>
-	<?php endforeach; ?>
-</ul> -->
+	<?php endforeach;?>
+</ul>

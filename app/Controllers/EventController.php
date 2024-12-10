@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Models\User;
-use App\Models\Event;
 use App\Models\Bebida;
 use App\Models\Convidado;
+use App\Models\Event;
+use App\Models\User;
 
 class EventController
 {
@@ -82,7 +82,8 @@ class EventController
         $event = Event::find($id);
 
         $bebidas = Bebida::getByEventoId($id);
-        $convidados = Convidado::getByEventoId($id);
+        $users = User::getAll();
+        $convidados = Convidado::getAll();
 
         require __DIR__ . '/../views/event_details.php';
     }
@@ -125,7 +126,7 @@ class EventController
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
-				
+
         if (!isset($_SESSION['user'])) {
             header("Location: /login");
             exit;
@@ -145,9 +146,5 @@ class EventController
             header('Location: /event/' . $id);
             exit;
         }
-    }
-
-    public function convidados() {
-        
     }
 }

@@ -14,14 +14,14 @@ class User
     private $cpf;
     private $birth;
 
-    public function __construct($id, $username, $password, $name, $cpf, $birth)
+    public function __construct($id = null, $username = null, $password = null, $name = null, $cpf = null, $birth_date)
     {
         $this->id = $id;
         $this->username = $username;
         $this->password = $password;
         $this->name = $name;
         $this->cpf = $cpf;
-        $this->birth = $birth;
+        $this->birth_date = $birth_date;
     }
 
     public function getId()
@@ -76,7 +76,7 @@ class User
 
     public function setBirth($birth)
     {
-        $this->brith = $birth;
+        $this->birth = $birth;
     }
 
     public function getBirth()
@@ -98,5 +98,28 @@ class User
         }
 
         return null;
+    }
+
+    public static function getAll()
+    {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->query("SELECT * FROM users");
+
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $userObjects = [];
+
+        foreach ($users as $user) {
+            // Criar um objeto User para cada linha de dados
+            $userObjects[] = new self(
+                $user['id'],
+                $user['username'],
+                $user['password'],
+                $user['name'],
+                $user['cpf'],
+                $user['birth_date']
+            );
+        }
+
+        return $userObjects;
     }
 }
