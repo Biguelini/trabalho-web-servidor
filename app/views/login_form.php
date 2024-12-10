@@ -16,6 +16,7 @@
 		<input type="password" id="password" name="password" required><br><br>
 
 		<button type="submit">Entrar</button>
+		<button type="input"><a href="/cadastro">Casdastrar</a></button>
 	</form>
 </body>
 
