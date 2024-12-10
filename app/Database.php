@@ -11,7 +11,7 @@ class Database {
 
     private function __construct() {
         try {
-            $this->connection = new PDO('mysql:host=127.0.0.1;dbname=event_manager', 'root', '');
+            $this->connection = new PDO('mysql:host=127.0.0.1;dbname=event_manager', 'admin', '12345678');
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die('Connection failed: ' . $e->getMessage());

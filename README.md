@@ -13,11 +13,12 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 1. Clone o projeto
 2. Entre na pasta trabalho-web-servidor
 3. Abra o Visual e o terminal
-4. Faça o Download do Database e importe
+4. Faça o Download do bd_trabalho.sql e importe
 5. Rode o comando composer install no terminal
-6. Rode o comando php -S localhost:8000
-7. Acesse localhost:8000 no seu navegador
-8. Utilize o username "admin" e a senha "123456"
+5. No arquivo Database.php altere as credenciais do seu banco
+7. Rode o comando php -S localhost:8000
+8. Acesse localhost:8000 no seu navegador
+9. Utilize o username "admin" e a senha "123456"
 ```
 
 # To-do
@@ -26,11 +27,6 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 - Envio de link com um preview do evento
 
 # Atividades de cada membro
-- João Pedro: desenvolveu os cadastros do backend, login, logout, além da base das interfaces e correção de bugs
-- Rayane: aprimorou a parte visual da interface, além de identificar alguns erros,
-- Cassiano: trabalhou na parte de validação dos forms e retorno de erro para o usuário
-
-# Atividades de cada membro 2 trabalho
 - João Pedro: implementou a orientação a objetos, melhorou padrão MVC, utilização de composer e autoload, integração com banco de dados, utilização de rotas trasnparentes, criação de script para criação do banco de dados, auxiliou os outros membros na correção de bugs durante suas atividades, passou um breve guia de como rodar o projeto.
 - Rayane: criação do figma, revisão de documentação, revisão do frontend e modificação do front-end
 - Cassiano: implementação da tela de perfil, validação de erros, feature convidados

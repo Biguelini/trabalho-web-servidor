@@ -13,7 +13,7 @@ class User
     private $password;
     private $name;
     private $cpf;
-    private $birth;
+    private $birth_date;
 
     public function __construct($id = null, $username = null, $password = null, $name = null, $cpf = null, $birth_date)
     {
@@ -75,14 +75,14 @@ class User
         return $this->cpf;
     }
 
-    public function setBirth($birth)
+    public function setBirth($birth_date)
     {
-        $this->birth = $birth;
+        $this->birth_date = $birth_date;
     }
 
     public function getBirth()
     {
-        return $this->birth;
+        return $this->birth_date;
     }
 
     public static function validateLogin($username, $password)
