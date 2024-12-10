@@ -18,9 +18,38 @@
 <ul>
 	<?php foreach ($bebidas as $bebida): ?>
 		<li>
-			<?php echo htmlspecialchars($bebida->getNome()); ?> - Quantidade: <?php echo $bebida->getQuantidadePorPessoa(); ?> - Temperatura: <?php echo htmlspecialchars($bebida->getTemperaturaConsumo()); ?>
+			Nome: <?php echo htmlspecialchars($bebida->getNome()); ?> - Quantidade: <?php echo $bebida->getQuantidadePorPessoa(); ?> - Temperatura: <?php echo htmlspecialchars($bebida->getTemperaturaConsumo()); ?>
 			<a href="/event/<?php echo $bebida->getEventoId(); ?>/bebida/edit/<?php echo $bebida->getId(); ?>">Editar</a>
 			<a href="/event/<?php echo $bebida->getEventoId(); ?>/bebida/delete/<?php echo $bebida->getId(); ?>">Excluir</a>
 		</li>
-	<?php endforeach; ?>
+	<?php endforeach;?>
+</ul>
+
+<h2>Convidados</h2>
+
+<form action="/event/<?php echo $event->getId(); ?>/convidado/create" method="POST">
+    <label for="convidado">Convidado</label>
+    <select id="convidado" name="user_id">
+        <?php foreach ($users as $user): ?>
+            <option value="<?php echo htmlspecialchars($user->getId()); ?>">
+                <?php echo htmlspecialchars($user->getName()); ?>
+            </option>
+        <?php endforeach;?>
+    </select>
+    <button type="submit">Adicionar Convidado</button>
+		<?php
+			if (isset($_SESSION['error'])) {
+				echo "<div class='error-message'>{$_SESSION['error']}</div>";
+				unset($_SESSION['error']); 
+		}
+		?>
+</form>
+
+<ul>
+	<?php foreach ($convidados as $convidado): ?>
+		<li>
+			Nome: <?php echo htmlspecialchars($convidado->getName()); ?> - CPF: <?php echo htmlspecialchars($convidado->getCpf()); ?>
+			<a href="/event/<?php echo $event->getId(); ?>/convidado/delete/<?php echo $convidado->getId(); ?>">Excluir</a>
+		</li>
+	<?php endforeach;?>
 </ul>

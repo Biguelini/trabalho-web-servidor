@@ -5,6 +5,10 @@
 		<button>Adicionar Evento</button>
 	</a>
 
+	<a href="/perfil/<?php echo $_SESSION['user']['id']?>">
+		<button>Perfil</button>
+	</a>
+
 	<a href="/logout">
 		<button>Logout</button>
 	</a>
@@ -17,5 +21,5 @@
 			<a href="/event/edit/<?php echo $event->getId(); ?>">Editar</a>
 			<a href="/event/delete/<?php echo $event->getId(); ?>">Excluir</a>
 		</li>
-	<?php endforeach; ?>
+	<?php endforeach;?>
 </ul>
