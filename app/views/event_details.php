@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 $pageTitle = 'Detalhes do Evento'; 
 include_once __DIR__ . '/../Includes/header.php';
