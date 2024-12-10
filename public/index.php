@@ -1,12 +1,20 @@
 <?php
 require_once '../vendor/autoload.php';
 
-use App\Controllers\BebidaController;
-use Pecee\SimpleRouter\SimpleRouter as Router;
 use App\Controllers\UserController;
 use App\Controllers\EventController;
+use App\Controllers\BebidaController;
+use App\Controllers\ConvidadoController;
+use Pecee\SimpleRouter\SimpleRouter as Router;
 
 session_start();
+
+Router::get('/event/{evento_id}/convidados', [ConvidadoController::class, 'index']);
+Router::get('/event/{evento_id}/convidado/create', [ConvidadoController::class, 'create']);
+Router::post('/event/{evento_id}/convidado/create', [ConvidadoController::class, 'create']);
+Router::get('/event/{evento_id}/convidado/edit/{id}', [ConvidadoController::class, 'edit']);
+Router::post('/event/{evento_id}/convidado/edit/{id}', [ConvidadoController::class, 'edit']);
+Router::get('/event/{evento_id}/convidado/delete/{id}', [ConvidadoController::class, 'delete']);
 
 Router::get('/login', [UserController::class, 'showLoginForm']);
 Router::post('/login', [UserController::class, 'login']);

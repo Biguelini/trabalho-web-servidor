@@ -2,8 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Models\Bebida;
+use App\Models\User;
 use App\Models\Event;
+use App\Models\Bebida;
+use App\Models\Convidado;
 
 class EventController
 {
@@ -80,6 +82,7 @@ class EventController
         $event = Event::find($id);
 
         $bebidas = Bebida::getByEventoId($id);
+        $convidados = Convidado::getByEventoId($id);
 
         require __DIR__ . '/../views/event_details.php';
     }
@@ -142,5 +145,9 @@ class EventController
             header('Location: /event/' . $id);
             exit;
         }
+    }
+
+    public function convidados() {
+        
     }
 }
