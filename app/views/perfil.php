@@ -1,32 +1,14 @@
-<div class="container">
-  <div>
-    <div>
-      <h3>Perfil do Usuário</h3>
-      <form action="/user/update/<?php echo $user->getId(); ?>" method="POST">
-        <div>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($user->getUsername()); ?>" required>
-        </div>
+<?php
+$pageTitle = 'Perfil'; 
+include __DIR__ . '/../Includes/header.php'; 
+?>
 
-        <div>
-          <label for="name">Nome:</label>
-          <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user->getName()); ?>" required>
-        </div>
-
-        <div>
-          <label for="cpf">CPF:</label>
-          <input type="text" id="cpf" name="cpf" value="<?php echo htmlspecialchars($user->getCPF()); ?>" required>
-        </div>
-
-        <div>
-          <label for="birth">Data de Nascimento:</label>
-          <input type="date" id="birth" name="birth" value="<?php echo htmlspecialchars($user->getBirth()); ?>" required>
-        </div>
-
-        <button type="submit">Atualizar Dados</button>
-        <button><a href="/">Voltar</a></button>
-
-      </form>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
+<div class="mb-4 w-100 text-center mt-4">
+        <a href="/event/<?php echo isset($evento_id) ? htmlspecialchars($evento_id) : ''; ?>" class="btn btn-secondary btn-lg">Voltar para o Evento</a>
     </div>
-  </div>
+
+    <?php include __DIR__ . '/../Includes/forms/perfil_form.php'; ?>
 </div>
+
+<?php include __DIR__ . '/../Includes/footer.php'; ?>

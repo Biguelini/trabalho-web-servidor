@@ -8,36 +8,24 @@ class UserController
 {
     public function showLoginForm()
     {   
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
-        
+        $this->ensureSessionStarted();
         require __DIR__ . '/../views/login_form.php';
     }
 
-<<<<<<< HEAD
-	public function login() {
-		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$username = $_POST['username'] ?? '';
-			$password = $_POST['password'] ?? '';
-=======
     public function login()
     {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
+        $this->enableErrorReporting();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'] ?? '';
             $password = $_POST['password'] ?? '';
->>>>>>> main
 
             // Valida as credenciais
             $user = User::validateLogin($username, $password);
 
             if ($user) {
                 // Se o login for bem-sucedido, inicia a sessão
-                session_start();
+                $this->ensureSessionStarted();
                 $_SESSION['user'] = [
                     'id' => $user->getId(),
                     'username' => $user->getUsername(),
@@ -56,7 +44,7 @@ class UserController
 
     public function logout()
     {
-        session_start();
+        $this->ensureSessionStarted();
         session_destroy();
         header("Location: /login");
         exit;
@@ -64,10 +52,8 @@ class UserController
 
     public function showUser($userId)
     {
-        if (!isset($_SESSION['user'])) {
-            header("Location: /login");
-            exit;
-        }
+        $this->ensureAuthenticated();
+
         $user = $this->getUserById($userId);
 
         if (!$user) {
@@ -76,6 +62,49 @@ class UserController
         }
 
         require __DIR__ . '/../views/perfil.php';
+    }
+
+    public function update()
+    {
+        $this->ensureAuthenticated();
+
+        $username = $_POST['username'] ?? '';
+        $name = $_POST['name'] ?? '';
+        $cpf = $_POST['cpf'] ?? '';
+        $birth = $_POST['birth'] ?? ''; 
+
+        $userId = $_SESSION['user']['id'];
+        $this->updateUserData($userId, $username, $name, $cpf, $birth);
+
+        $_SESSION['user']['username'] = $username;
+        $_SESSION['user']['name'] = $name;
+
+        header("Location: /perfil/$userId");
+        exit;
+    }
+
+    private function ensureSessionStarted()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
+    private function ensureAuthenticated()
+    {
+        $this->ensureSessionStarted();
+
+        if (!isset($_SESSION['user'])) {
+            header("Location: /login");
+            exit;
+        }
+    }
+
+    private function enableErrorReporting()
+    {
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
     }
 
     private function getUserById($userId)
@@ -93,29 +122,6 @@ class UserController
         return null;
     }
 
-    public function update()
-    {
-
-        if (!isset($_SESSION['user'])) {
-            header("Location: /login");
-            exit;
-        }
-
-        $username = $_POST['username'] ?? '';
-        $name = $_POST['name'] ?? '';
-        $cpf = $_POST['cpf'] ?? '';
-        $birth = $_POST['birth'] ?? ''; 
-
-        $userId = $_SESSION['user']['id'];
-        $this->updateUserData($userId, $username, $name, $cpf, $birth);
-
-        $_SESSION['user']['username'] = $username;
-        $_SESSION['user']['name'] = $name;
-
-        header("Location: /perfil/$userId");
-        exit;
-    }
-
     private function updateUserData($userId, $username, $name, $cpf, $birth)
     {
         $db = \App\Database::getInstance()->getConnection();
@@ -127,5 +133,4 @@ class UserController
         $stmt->bindParam(':id', $userId, \PDO::PARAM_INT);
         $stmt->execute();
     }
-
 }

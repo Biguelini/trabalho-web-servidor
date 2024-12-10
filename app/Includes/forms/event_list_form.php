@@ -3,6 +3,7 @@
     <div class="mb-4 d-flex justify-content-center">
         <div class="d-inline-flex gap-3">
             <a href="/event/create" class="btn btn-lg text-light" style="background-color: #333333;">Adicionar Evento</a>
+            <a href="/perfil/<?php echo $_SESSION['user']['id']; ?>" class="btn btn-lg text-light" style="background-color: #333333;">Perfil</a>
             <a href="/logout" class="btn btn-lg text-light" style="background-color: #333333;">Logout</a>
         </div>
     </div>
