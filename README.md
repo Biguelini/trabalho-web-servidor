@@ -12,9 +12,12 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 ```
 1. Clone o projeto
 2. Entre na pasta trabalho-web-servidor
-3. Rode o comando php -S localhost:8000
-4. Acesse localhost:8000 no seu navegador
-5. Utilize o username "admin" e a senha "123456"
+3. Abra o Visual e o terminal
+4. Faça o Download do Database e importe
+5. Rode o comando composer install no terminal
+6. Rode o comando php -S localhost:8000
+7. Acesse localhost:8000 no seu navegador
+8. Utilize o username "admin" e a senha "123456"
 ```
 
 # To-do
