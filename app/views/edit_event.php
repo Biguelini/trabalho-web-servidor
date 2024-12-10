@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Editar Bebida'; 
+$pageTitle = 'Editar Evento'; 
 include __DIR__ . '/../includes/header.php'; 
 ?>
 

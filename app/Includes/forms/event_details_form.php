@@ -1,7 +1,7 @@
-<!-- event_details_form.php -->
+
 <div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
-    <div class="mb-4 w-100 text-center">
-        <a href="/event" class="btn btn-secondary btn-lg">Voltar para a Página Inicial</a>
+<div class="mb-4 w-100 text-center mt-4">
+        <a href="/event/<?php echo isset($evento_id) ? htmlspecialchars($evento_id) : ''; ?>" class="btn btn-secondary btn-lg">Voltar para o Evento</a>
     </div>
     <div class="card shadow-lg p-5" style="width: 100%; max-width: 700px; background-color: #f9f9f9; border-radius: 10px; border: 1px solid #ccc;">
         <h1 class="text-center mb-4" style="color: #333;">Detalhes do Evento</h1>
