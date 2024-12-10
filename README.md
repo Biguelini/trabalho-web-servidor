@@ -27,7 +27,7 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 
 # Atividades de cada membro
 - João Pedro: desenvolveu os cadastros do backend, login, logout, além da base das interfaces e correção de bugs
-- Rayane: aprimorou a parte visual da interface, além de identificar alguns erros
+- Rayane: aprimorou a parte visual da interface, além de identificar alguns erros, responsavel pelo figma e ajustar documentação
 - Cassiano: trabalhou na parte de validação dos forms e retorno de erro para o usuário
 
 # Atividades de cada membro 2 trabalho
