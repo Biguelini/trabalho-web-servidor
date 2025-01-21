@@ -20,6 +20,7 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 8. Acesse localhost:8000 no seu navegador
 9. Utilize o username "admin" e a senha "123456"
 ```
+[bd_trabalho.sql](https://github.com/Biguelini/trabalho-web-servidor/blob/main/bd_trabalho.sql)
 
 # To-do
 - Cálculo automático da quantidade necessária de acordo com a quantidade recomendada
@@ -33,3 +34,6 @@ Esse projeto consiste em um cadastro de eventos, onde é possível criar um even
 
 # OBS: 
 A ideia original da equipe era fazer um sistema com react e uma api com php, mas durante o processo foram encontrados algumas dificuldades e por questão de tempo o projeto foi deixado de lado.
+
+# Figma
+[FIGMA](https://github.com/Biguelini/trabalho-web-servidor/blob/main/web-servidor.pdf)
